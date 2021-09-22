@@ -12,16 +12,39 @@
             padding: 0;
             box-sizing: border-box;
             font-family: monospace;
+            color: white;
         }
         
-        h1 {
+        div {
+            height: 200px;
+            margin: 20px;
+            background-color: orange;
+        }
+        
+        .two {
+            position: relative;
+            background-color: blueviolet;
+            /* top: 100px;
+             right: 40px;
+            top: 40px;  */
+        }
+        
+        h2 {
             background-color: red;
-            color: seashell;
-            height: 50vh;
-            /* padding: 10px; */
-            text-align: right;
-            padding-left: 10px;
-            padding-top: 50%;
+            position: absolute;
+            /* Bottom Right
+            right: 0;
+            bottom: 0; */
+            /* bottom-left */
+            bottom: 0;
+        }
+        
+        img {
+            width: 80px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -29,7 +52,13 @@
 <body>
 
 </body>
-<!-- Positioning -->
-<h1>Lorem ipsum</h1>
+<img src="https://thumbs.dreamstime.com/z/chat-icon-logo-template-120525384.jpg" alt="">
+<!-- <div class="one">
+    <h1>Heading of div 1</h1>
+
+</div> -->
+<div class="two">
+    <h2> Heading of div 2</h2>
+</div>
 
 </html>
