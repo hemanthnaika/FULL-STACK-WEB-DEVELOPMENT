@@ -7,27 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS</title>
     <style>
-        span {
-            color: blueviolet;
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
         }
         
-        #block {
-            color: ff0000;
-        }
-        
-        .orange {
-            color: #eff40b;
+        .parent {
+            background-color: black;
+            color: blue;
+            height: 100px;
+            /* rem */
+            font-size: 1em;
         }
     </style>
 </head>
 
 <body>
-    <h1 style="color: red;">I'm heading</h1>
-    <span>I'm span</span>
-    <div>I'm div</div>
-    <div id="block"> I'm a div with id block</div>
-    <div class="orange">I'm div with class orange</div>
-    <span class="orange ">I'm a div class orange</span>
+    <div class="parent">
+        <h1>Heading</h1>
+    </div>
 </body>
 
 </html>
