@@ -2,50 +2,45 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
     <style>
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
+            font-family: Metropolis;
             margin: 4px;
         }
         
-        h2 {
-            padding: 5px;
-            color: white;
-            background-color: orange;
+        div.parent {
+            background-color: #111;
+            min-height: 200px;
         }
         
-        h2:hover {
-            background-color: red;
-            cursor: pointer;
+        div.child {
+            background-color: #ffbf00;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            transition-duration: 0.1s;
+            transition-timing-function: ease-out;
+            transition-delay: 2s;
         }
         
-        div::selection {
-            background-color: royalblue;
+        div.parent:hover div.child {
+            background-color: cyan;
+            transform: translate(500px);
         }
-        
-        input :focus {
-            background-color: pink;
-            color: red;
-            font-size: 100rem;
-        }
-        
-        h2::after {}
     </style>
 </head>
 
 <body>
-    <h2>Im a hending</h2>
-    <div>
-        hhhhh sgsgjhsj sgjsjgjsdgjhg shgjsgjsjshgsh hshshshhs shshssh
+    <div class="parent">
+        <div class="child"></div>
     </div>
-
-    <input type="text">
 </body>
 
 </html>
