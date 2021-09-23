@@ -14,18 +14,19 @@
         }
         
         .parent {
-            min-height: 100vh;
+            min-height: 500px;
             background-color: black;
             position: relative;
             display: flex;
             flex-direction: row;
-            justify-content: center;
-            align-items: center;
+            /* flex-wrap: wrap;
+            align-items: stretch; */
+            justify-self: space-between;
         }
         
         .child {
             width: 100px;
-            height: 150px;
+            min-height: 150px;
             background-color: orange;
             margin: 10px;
             /* display: inline-block; */
@@ -38,7 +39,24 @@
         <div style="background-color: red;" class="child"></div>
         <div style="background-color:orange;" class="child"></div>
         <div style="background-color: blue;" class="child"></div>
+        <!-- <div style="background-color: red;" class="child"></div>
+        <div style="background-color:orange;" class="child"></div> -->
+        <!-- <div style="background-color: blue;" class="child"></div>
+        <div style="background-color: red;" class="child"></div>
+        <div style="background-color:orange;" class="child"></div>
+        <div style="background-color: blue;" class="child"></div>
+        <div style="background-color: red;" class="child"></div>
+        <div style="background-color:orange;" class="child"></div>
+        <div style="background-color: blue;" class="child"></div>
+        <div style="background-color: red;" class="child"></div>
+        <div style="background-color:orange;" class="child"></div>
+        <div style="background-color: blue;" class="child"></div>
+        <div style="background-color: red;" class="child"></div>
+        <div style="background-color:orange;" class="child"></div>
+        <div style="background-color: blue;" class="child"></div> -->
     </div>
 </body>
+
+</html>
 
 </html>
