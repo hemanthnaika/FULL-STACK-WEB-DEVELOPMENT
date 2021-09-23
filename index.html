@@ -14,20 +14,38 @@
             margin: 4px;
         }
         
-        div.parent div:first-child {
-            background-color: lime;
+        h2 {
+            padding: 5px;
+            color: white;
+            background-color: orange;
         }
+        
+        h2:hover {
+            background-color: red;
+            cursor: pointer;
+        }
+        
+        div::selection {
+            background-color: royalblue;
+        }
+        
+        input :focus {
+            background-color: pink;
+            color: red;
+            font-size: 100rem;
+        }
+        
+        h2::after {}
     </style>
 </head>
 
 <body>
-    <div class="parent">
-        <div>i'm a div</div>
-        <div>Im second div</div>
-
-
-        <div>I'm a div third</div>
+    <h2>Im a hending</h2>
+    <div>
+        hhhhh sgsgjhsj sgjsjgjsdgjhg shgjsgjsjshgsh hshshshhs shshssh
     </div>
+
+    <input type="text">
 </body>
 
 </html>
