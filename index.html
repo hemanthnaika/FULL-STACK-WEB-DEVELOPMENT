@@ -2,33 +2,38 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
-    <title>Todo list</title>
-
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.parent {
+            background-color: black;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        @media (max-width:700px) {
+            div.parent {
+                background-color: blueviolet;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width:500px) {
+            div.parent {
+                background-color: yellow;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <header></header>
-
-    <footer>
-        <div>
-            <a href="#">Hemanth</a>
-        </div>
-        <div>
-            <a href="#">
-                <img class="social" src="./assets/github.png" /> </a>
-            <a href="#">
-                <img class="social" src="./assets/instagram.png" alt="" /> </a>
-            <a href="#">
-                <img class="social" src="./assets/linkedin.png" alt="" /> </a>
-
-        </div>
-
-    </footer>
+    <div class="parent">
+        <h1>I'm a heading</h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, doloremque velit earum quod commodi architecto atque maiores reprehenderit, fuga sunt voluptas provident officiis ullam corrupti illo tempora. Sit, suscipit blanditiis.
+    </div>
 </body>
 
 </html>
