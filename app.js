@@ -1,15 +1,8 @@
-//!Creating Add even listener And Take the input form the user
+//!Add the Dark Mode
+var body = document.querySelector('body')
 var button = document.querySelector('button')
-var input = document.querySelector('input')
-var list = document.querySelector('ul')
-
 const callbackfunc = (event) => {
-    // console.log(event.target)
-    // console.log(input.value)
-    const user = input.value
-    const element = document.createElement('li')
-    const textNode = document.createTextNode(user)
-    element.appendChild(textNode)
-    list.appendChild(element)
+    body.classList.toggle('dark')
+
 }
 button.addEventListener('click', callbackfunc)
