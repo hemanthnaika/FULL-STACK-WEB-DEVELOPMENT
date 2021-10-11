@@ -1,38 +1,27 @@
-//! Frist log the one, Two etc and next settimeout is log
-// console.log('one')
-// console.log('Two')
-//     //?To crate SetTimeout
-// setTimeout(() => {
-//     console.log('hi')
-// }, 5000)
-// console.log('Three')
+//!To create fetch API
+// let response = fetch("https://jsonplaceholder.typicode.com/users")
+//     .then((res) => res.json())
+//     .then((data) => {
+//         console.log(data)
+//     })
 
-//!To create the Promise
-//?new= It is a Key word to create a new promosie
-// let value = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve('Hello')
-//     }, 3000)
-// })
-// console.log(value)
-// setTimeout(() => {
-//     console.log(value)
-// }, 4000)
+//!To create Which user click in console
+const list = document.querySelector('ul')
+let arr = ['one', 'Two', 'Three', 'Four']
+    // console.log(list)
 
-//! To create A Fetch API
-//!then is key word of callbackof
-//!data is not key word
-let response = fetch('https://jsonplaceholder.typicode.com/users').then(data => {
-    let parsedData = data.json()
-    console.log(parsedData)
-    return (parsedData)
-        //!book not a keyword
-}).then(book => { console.log(book) })
+arr.forEach(chore => {
+    const element = document.createElement('li')
+    const textNode = document.createTextNode(chore)
+    element.appendChild(textNode)
+    element.addEventListener('click', (e) => {
+        //!To Give the Prompt To user Are sure
+        const userInput = window.prompt(`Are you sure that you want to delete "${chore}"`)
+        if (userInput == 'YES') e.target.remove()
+            // console.log(e.target.innerHTML)
+            //     //!To Remove An Element
+            // e.target.remove()
+    })
+    list.appendChild(element)
 
-
-// console.log(response)
-// setTimeout(() => {
-//     console.log(response)
-//     const data = response.json()
-//     console.log(data)
-// }, 2000)
+})
