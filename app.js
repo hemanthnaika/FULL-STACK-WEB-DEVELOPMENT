@@ -1,18 +1,14 @@
-// fetch('https://jsonplaceholder.typicode.com/users')
-//     .then(res => res.json())
-//     .then(data => {
-//         console.log(data)
-//         data.forEach(user => {
-
-//             console.log(data)
-
-//         })
-//     })
-//!To conver Data into async And Await is only work in async
-const fetchData = async() => {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users')
-    console.log(response)
-    const data = await response.json()
-    console.log(data)
+const input = document.querySelector('input')
+const button = document.querySelector('button')
+const getData = async(item) => {
+    let url = `https://api.edamam.com/search?app_id=bd51454f&app_key=3b359328e30cad3141319969dfedaba9&q=${item}`
+    const res = await fetch(url)
+    const data = await res.json()
+    console.log()
+    data.hits.forEach(recipe => {
+        console.log(recipe)
+    })
 }
-fetchData()
+button.addEventListener('click', (e) => {
+    getData(input.value)
+})
