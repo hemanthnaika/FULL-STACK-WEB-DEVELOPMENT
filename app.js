@@ -1,11 +1,16 @@
-//?Resolve
-// const path = require('path')
-//!To find the Path relative path into absolute path Ex \user\desktop\  into E:\user\desktop
-//!The key word is resolve
-// console.log(path.resolve('./app.js'))
-
-//?Relative
+//?Extname
+//!To find the extname
 const path = require('path')
-    //!To find the Path relative path Ex E:\user\desktop into css\temp\utils.js
-    //!The key word is relative
-console.log(path.relative('../', "./temp/utils.js"))
+    // console.log(path.extname('./app.js'))
+
+//?Dirname
+//!It give directory name
+// console.log(path.dirname('./temp/utils.js'))
+
+//?__Dirname 
+//!It give correct Path
+// console.log(__dirname)
+
+//?Path Join
+//!To connect To Path or file
+console.log(path.join(__dirname, 'app.js'))
