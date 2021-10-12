@@ -1,16 +1,17 @@
-//?Extname
-//!To find the extname
-const path = require('path')
-    // console.log(path.extname('./app.js'))
+const fs = require('fs')
+    //!To convert Buffer into data using utf-8 key
+    // fs.readFile('./test.txt', 'utf-8', (error, data) => {
+    //     if (error) console.log(error)
+    //     else console.log(data)
+    // })
 
-//?Dirname
-//!It give directory name
-// console.log(path.dirname('./temp/utils.js'))
+//? To convert Async to sync
+// console.log(fs.readFileSync('./test.txt', 'utf8'))
+// console.log('Im A Random log')
 
-//?__Dirname 
-//!It give correct Path
-// console.log(__dirname)
 
-//?Path Join
-//!To connect To Path or file
-console.log(path.join(__dirname, 'app.js'))
+//?To write File
+fs.writeFile('./test.txt', "Hi", (error, data) => {
+    if (error) console.log(error)
+    else console.log(data)
+})
