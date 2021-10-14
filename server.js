@@ -1,20 +1,22 @@
-//! How to  allowed and Blocked using Middleware
+//! TO CREATE AUTHORIZE UNAUTHORIZE OR  ADMIN USING THUNDER CLIENT
+//!IN HEADER IS ADMIN OR NOT
 const express = require('express')
 const PORT = 3000
 const app = express()
 
-//!TO CREATE MIDDLEWARE
-const verify = (req, res, next) => {
-    if (req.headers['user-agent'] === "Thunder Client (https://www.thunderclient.io)") next()
-    else res.send("BLOCKED")
+const isAdmin = (req, res, next) => {
+    if (req.headers.admin === 'true') next()
+    else res.send("UNAUTHORIZE")
 }
-
-app.get('/', verify, (req, res) => {
-    res.send("VERIFIED")
+app.get('/public', (req, res) => {
+    console.log(req.headers)
+    res.send(`I'm public rout`)
 })
 
-
+app.get('/private', isAdmin, (req, res) => {
+    res.send(`I'm Admin rout`)
+})
 
 app.listen(PORT, () => {
-    console.log(`Server running at port ${PORT}`)
+    console.log(`Server is running at port ${PORT}`)
 })
