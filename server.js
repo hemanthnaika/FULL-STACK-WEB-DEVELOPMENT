@@ -1,14 +1,14 @@
-//!How to manke get post patch delete request
+//! How to  allowed and Blocked
 const express = require('express')
 const PORT = 3000
 const app = express()
 
+
 app.get('/', (req, res) => {
-    //!headers is a Object
-    //!To find the user agent or which is give to request using headers key
-    //! Exeter using header detail
-    console.log(req.headers)
-    res.send('Server is GET')
+    console.log(req)
+    if (req.headers['user-agent'] === "Thunder Client (https://www.thunderclient.io)") res.send('Server is GET')
+    else res.send("BLOCKED")
+
 })
 
 
