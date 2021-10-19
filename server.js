@@ -1,23 +1,14 @@
 const express = require('express')
 const app = express()
-const PORT = 3000
-const database = require('./database/db')
-    //!Import the router
-const cateegoryRoutes = require('./routes/categoryRoutes')
-console.log(cateegoryRoutes.stack)
+const category_Routes = require('./routes/categoryRoutes')
+const productRoutes = require('./routes/productRouter')
 app.use(express.json())
-    //http://3000/temp/routes
-app.use('/temp', cateegoryRoutes)
-app.get('/', (req, res) => {
-    try {
-        console.log(document)
-    } catch (error) {
-        res.send(error.message)
-    }
-
-})
 
 
-app.listen(PORT, () => {
-    console.log(`Server started at port ${PORT}`)
+app.use('/category', category_Routes)
+app.use('/products', productRoutes)
+
+
+app.listen(3001, () => {
+    console.log("Listening at PORT 3001")
 })
