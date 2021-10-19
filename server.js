@@ -1,10 +1,19 @@
 const express = require('express')
-const database = require('./database/db')
 const app = express()
-app.use(express.json)
+const PORT = 3000
+const database = require('./database/db')
+app.use(express.json())
+
+app.get('/', (req, res) => {
+    try {
+        console.log(document)
+    } catch (error) {
+        res.send(error.message)
+    }
+
+})
 
 
-
-app.listen(3001, () => {
-    console.log("Server started at port 3001")
+app.listen(PORT, () => {
+    console.log(`Server started at port ${PORT}`)
 })
