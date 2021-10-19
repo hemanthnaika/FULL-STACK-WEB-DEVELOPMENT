@@ -1,5 +1,5 @@
 module.exports = {
     products: [],
-    category: [],
+    categories: [],
     order: []
 }
