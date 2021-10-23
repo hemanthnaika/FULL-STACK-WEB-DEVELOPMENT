@@ -34,46 +34,68 @@ METHOD: POST
 
 router.post('/add', (req, res) => {
 
-    const { name, price, category } = req.body
+        const { name, price, category } = req.body
 
-    if (!database.categories.find(item => item.name === category)) {
-        // create a category if it doesn't already exist
-        let newCategory = { name: category, id: uuidv4() }
-        database.categories.push(newCategory)
-            // create a product & add it
-        const newProduct = {
-            id: uuidv4(),
-            name,
-            price,
-            category: category
+        if (!database.categories.find(item => item.name === category)) {
+            // create a category if it doesn't already exist
+            let newCategory = { name: category, id: uuidv4() }
+            database.categories.push(newCategory)
+                // create a product & add it
+            const newProduct = {
+                id: uuidv4(),
+                name,
+                price,
+                category: category
+            }
+            database.products.push(newProduct)
+        } else {
+            const newProduct = {
+                id: uuidv4(),
+                name,
+                price,
+                category: category
+            }
+            database.products.push(newProduct)
         }
-        database.products.push(newProduct)
-    } else {
-        const newProduct = {
-            id: uuidv4(),
-            name,
-            price,
-            category: category
-        }
-        database.products.push(newProduct)
-    }
 
+        try {
+            res.json({
+                products: database.products,
+
+                message: "Successfully add products",
+                status: "SUCCESS"
+            })
+        } catch (error) {
+            console.log(error)
+            res.json({
+                products: [],
+                message: error.message,
+                status: "FAILED"
+            })
+        }
+
+    })
+    // ----------Product Delete
+router.delete('/delete/:id', (req, res) => {
     try {
+        const { id } = req.params
+        const newProducts = database.products.filter(item => item.id !== id)
+        database.products = newProducts
+
+
         res.json({
-            products: database.products,
-            message: "Successfully fetched products",
+            products: newProducts,
+            message: "Successfully removed products",
             status: "SUCCESS"
         })
     } catch (error) {
         console.log(error)
         res.json({
-            products: [],
+            categories: [],
             message: error.message,
             status: "FAILED"
         })
     }
-
 })
-
 
 module.exports = router
