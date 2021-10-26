@@ -1,2 +1,5 @@
 # Git ignore the node modules file
 /node_modules
+/routes
+/server.js
+/database
