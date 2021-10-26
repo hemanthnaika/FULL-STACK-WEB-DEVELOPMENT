@@ -77,25 +77,49 @@ router.post('/add', (req, res) => {
     })
     // ----------Product Delete
 router.delete('/delete/:id', (req, res) => {
+        try {
+            const { id } = req.params
+            const newProducts = database.products.filter(item => item.id !== id)
+            database.products = newProducts
+
+
+            res.json({
+                products: newProducts,
+                message: "Successfully removed products",
+                status: "SUCCESS"
+            })
+        } catch (error) {
+            console.log(error)
+            res.json({
+                categories: [],
+                message: error.message,
+                status: "FAILED"
+            })
+        }
+    })
+    // -----Update Router
+router.post('/update', (req, res) => {
+    let new_details = req.body
+    const { id } = new_details
+    let product = database.products.find((product) => product.id === id)
+    let attributes = Object.keys(new_details)
+    attributes.forEach((key) => {
+        console.log(product[key], new_details[key])
+        product[key] = new_details[key]
+    })
+    console.log(product)
     try {
-        const { id } = req.params
-        const newProducts = database.products.filter(item => item.id !== id)
-        database.products = newProducts
-
-
-        res.json({
-            products: newProducts,
-            message: "Successfully removed products",
-            status: "SUCCESS"
+        res.status(200).json({
+            product: database.products,
+            message: "Product updated successfully",
+            status: "Success"
         })
     } catch (error) {
-        console.log(error)
-        res.json({
-            categories: [],
-            message: error.message,
-            status: "FAILED"
+        res.json(200).json({
+            product: [],
+            massage: error.message,
+            status: "Failed"
         })
     }
 })
-
 module.exports = router
